@@ -1,3 +1,5 @@
+import { CategoryHotel } from "./CategoryHotel";
+
 export interface Hotel {
     id: number; 
     name: string;
@@ -9,8 +11,10 @@ export interface Hotel {
     promotion: string;
     price: number;
     review: number;
+    starnumber :string;
     category_hotel_id: number;
     region_id:number;
+    categoryHotel: CategoryHotel;
    
   }
   

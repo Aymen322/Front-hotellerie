@@ -11,6 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TopDestinationsComponent } from './top-destinations/top-destinations.component';
+import { TopSearchComponent } from './top-search/top-search.component';
+import { FormsModule } from '@angular/forms';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,16 @@ import { TopDestinationsComponent } from './top-destinations/top-destinations.co
     ContactComponent,
     AboutComponent,
     HotelComponent,
-    TopDestinationsComponent
+    TopDestinationsComponent,
+    TopSearchComponent,
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

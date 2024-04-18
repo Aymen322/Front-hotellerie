@@ -37,4 +37,7 @@ export class HotelService {
       map(hotels => hotels.filter(hotel => hotel.region_id === regionId))
     );
   }
+  getHotelById(id: number): Observable<Hotel> {
+    return this.http.get<Hotel>(`${this.baseUrl}/${id}`);
+  }
 }

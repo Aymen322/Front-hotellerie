@@ -7,7 +7,7 @@ import { CategoryHotel } from '../models/CategoryHotel';
   providedIn: 'root'
 })
 export class CategoryHotelService {
-  private baseUrl = 'http://127.0.0.1:8000/api/category-hotels';
+  private baseUrl = 'http://127.0.0.1:8000/api/category_hotels';
 
   constructor(private http: HttpClient) { }
 
@@ -30,4 +30,8 @@ export class CategoryHotelService {
   deleteCategoryHotel(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+  getCategoryHotelById(id: number): Observable<CategoryHotel> {
+    return this.http.get<CategoryHotel>(`${this.baseUrl}/${id}`);
+  }
+  
 }

@@ -7,6 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { TopDestinationsComponent } from './top-destinations/top-destinations.component';
+import { TopSearchComponent } from './top-search/top-search.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 
 const routes: Routes = [
 
@@ -44,13 +46,18 @@ const routes: Routes = [
   {
     path:'topdestinations/:regionId',
     component:TopDestinationsComponent
-  }
+  },
+  { path: 'topsearch', component: TopSearchComponent }, 
+  {
+    path: 'hoteldetail/:id', // Define a dynamic route parameter ":id"
+    component: HotelDetailComponent
+  },
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

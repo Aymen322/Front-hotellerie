@@ -9,6 +9,9 @@ import { Region } from '../models/Region';
   providedIn: 'root'
 })
 export class RegionService {
+  getAllRegions() {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'http://127.0.0.1:8000/api'; 
 
   constructor(private http: HttpClient) { }

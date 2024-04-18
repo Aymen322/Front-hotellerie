@@ -23,7 +23,6 @@
         </div>
     </div>
 </div>
-
 <!-- Header Area -->
 <header class="main_header_arae navbar_color_black">
     <!-- Top Bar -->
@@ -46,31 +45,7 @@
                     <ul class="topbar-others-options">
                         <li> <a [routerLink]="['/login']"> Login </a></li>
                         <li> <a [routerLink]="['/register']">Sign up</a></li> 
-                        <li>
-                            <div class="dropdown language-option">
-                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <span class="lang-name"></span>
-                                </button>
-                                <div class="dropdown-menu language-dropdown-menu">
-                                    <a class="dropdown-item" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Arabic</a>
-                                    <a class="dropdown-item" href="#">French</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown language-option">
-                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <span class="lang-name"></span>
-                                </button>
-                                <div class="dropdown-menu language-dropdown-menu">
-                                    <a class="dropdown-item" href="#">TND</a>
-                                    <a class="dropdown-item" href="#">URO</a>
-                                </div>
-                            </div>
-                        </li>
+                    
                     </ul>
                 </div>
             </div>
@@ -104,12 +79,6 @@
                              </a></li>
                           
                             <li class="nav-item">
-                                <a class="nav-link" [routerLink]="">
-                                    Categories
-                                  
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" [routerLink]="['about']">
                                   About
                                     
@@ -127,9 +96,6 @@
                                 <a href="#" class="search-box">
                                     <i class="bi bi-search"></i>
                                 </a>
-                            </div>
-                            <div class="option-item">
-                                <a href="become-vendor.html" class="btn  btn_navber">Become a partner</a>
                             </div>
                         </div>
                     </div>
@@ -163,7 +129,6 @@
         </div>
     </div>
 </header>
-
 
 <div class="wrapper"><router-outlet></router-outlet></div> <!--  thot navigation bin les pages  --> 
 

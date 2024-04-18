@@ -42,158 +42,64 @@
                     <div class="theme_search_form_tabbtn">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels"
-                                    type="button" role="tab" aria-controls="hotels" aria-selected="true">
+                                <button class="nav-link active" id="hotels-tab" data-bs-toggle="tab"
+                                    data-bs-target="#hotels" type="button" role="tab" aria-controls="hotels"
+                                    aria-selected="true">
                                     <i class="fas fa-hotel"></i> Hotels
                                 </button>
                             </li>
                         </ul>
                     </div>
-                    
+
 
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="hotels" role="tabpanel" aria-labelledby="hotels-tab">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tour_search_form">
+
                                         <form action="#!">
                                             <div class="row">
-                                                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                                                    <div class="flight_Search_boxed">
-                                                        <p>Destination</p>
-                                                        <input type="text" placeholder="Where are you going?">
-                                                        <span>Where are you going?</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                                    <div class="form_search_date">
-                                                        <div class="flight_Search_boxed date_flex_area">
-                                                            <div class="Journey_date">
-                                                                <p>Journey date</p>
-                                                                <input type="date" value="2022-05-03">
-                                                                <span>Thursday</span>
-                                                            </div>
-                                                            <div class="Journey_date">
-                                                                <p>Return date</p>
-                                                                <input type="date" value="2022-05-05">
-                                                                <span>Thursday</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2  col-md-6 col-sm-12 col-12">
-                                                    <div class="flight_Search_boxed dropdown_passenger_area">
-                                                        <p>Passenger, Class </p>
-                                                        <div class="dropdown">
-                                                            <button class="dropdown-toggle final-count"
-                                                                data-toggle="dropdown" type="button"
-                                                                id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
-                                                                0 Passenger
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown_passenger_info"
-                                                                aria-labelledby="dropdownMenuButton1">
-                                                                <div class="traveller-calulate-persons">
-                                                                    <div class="passengers">
-                                                                        <h6>Passengers</h6>
-                                                                        <div class="passengers-types">
-                                                                            <div class="passengers-type">
-                                                                                <div class="text"><span
-                                                                                        class="count pcount">2</span>
-                                                                                    <div class="type-label">
-                                                                                        <p>Adult</p>
-                                                                                        <span>12+
-                                                                                            yrs</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="button-set">
-                                                                                    <button type="button"
-                                                                                        class="btn-add">
-                                                                                        <i class="fas fa-plus"></i>
-                                                                                    </button>
-                                                                                    <button type="button"
-                                                                                        class="btn-subtract">
-                                                                                        <i class="fas fa-minus"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="passengers-type">
-                                                                                <div class="text"><span
-                                                                                        class="count ccount">0</span>
-                                                                                    <div class="type-label">
-                                                                                        <p class="fz14 mb-xs-0">
-                                                                                            Children
-                                                                                        </p><span>2
-                                                                                            - Less than 12
-                                                                                            yrs</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="button-set">
-                                                                                    <button type="button"
-                                                                                        class="btn-add-c">
-                                                                                        <i class="fas fa-plus"></i>
-                                                                                    </button>
-                                                                                    <button type="button"
-                                                                                        class="btn-subtract-c">
-                                                                                        <i class="fas fa-minus"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="passengers-type">
-                                                                                <div class="text"><span
-                                                                                        class="count incount">0</span>
-                                                                                    <div class="type-label">
-                                                                                        <p class="fz14 mb-xs-0">
-                                                                                            Infant
-                                                                                        </p><span>Less
-                                                                                            than 2
-                                                                                            yrs</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="button-set">
-                                                                                    <button type="button"
-                                                                                        class="btn-add-in">
-                                                                                        <i class="fas fa-plus"></i>
-                                                                                    </button>
-                                                                                    <button type="button"
-                                                                                        class="btn-subtract-in">
-                                                                                        <i class="fas fa-minus"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                                            <div class="flight_Search_boxed">
+                                                                <p>Destination</p>
+                                                                <div class="search-container">
+                                                                    <!-- Remplacez l'input par le select -->
+                                                                    <select [(ngModel)]="searchRegion" (change)="filterRegions()" style="width: 100%;">
+                                                                        <option value="" disabled selected>Select region...</option>
+                                                                        <option *ngFor="let region of filteredRegions" [value]="region.name">{{ region.name }}</option>
+                                                                    </select>
+                                                            
+                                                                    <div class="suggestions" *ngIf="filteredRegions.length > 0">
+                                                                        <ul>
+                                                                            <li *ngFor="let region of filteredRegions"
+                                                                                (click)="selectRegion(region)"
+                                                                                [ngClass]="{ 'selected': region.name === searchRegion }">
+                                                                                {{ region.name }}
+                                                                            </li>
+                                                                        </ul>
                                                                     </div>
-                                                                    <div class="cabin-selection">
-                                                                        <h6>Cabin Class</h6>
-                                                                        <div class="cabin-list">
-                                                                            <button type="button"
-                                                                                class="label-select-btn">
-                                                                                <span class="muiButton-label">Economy
-                                                                                </span>
-                                                                            </button>
-                                                                            <button type="button"
-                                                                                class="label-select-btn active">
-                                                                                <span class="muiButton-label">
-                                                                                    Business
-                                                                                </span>
-                                                                            </button>
-                                                                            <button type="button"
-                                                                                class="label-select-btn">
-                                                                                <span class="MuiButton-label">First
-                                                                                    Class </span>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
+                                                                    <!-- Fin des suggestions -->
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <span>Business</span>
+                                                        
+
+                                                        <span>Where are you going?</span>
                                                     </div>
+
+                                               
+                                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                                  
                                                 </div>
-                                                <div class="top_form_search_button">
+                                                <div class="col-lg-2  col-md-6 col-sm-12 col-12">
+                                                    
+                                                </div>
+                                                <a class="top_form_search_button" (click)="search()">
                                                     <button class="btn btn_theme btn_md">Search</button>
-                                                </div>
-                                            </div>
+                                                </a>
+
+                                        
                                         </form>
                                     </div>
                                 </div>
@@ -224,7 +130,7 @@
                     <div class="popular_destination_card">
                         <div class="popular_destination_img">
                             <img [src]="region.image ? region.image : 'assets/img/default-image.jpg'"
-                                alt="Region Image">
+                                alt="Region Image" style="height: 216; width: 249;">
                             <div class="destination_ratings">
                                 <p><i class="fa fa-star"></i> <span>{{ region.score ? region.score : 'N/A' }}</span></p>
                             </div>
@@ -235,8 +141,8 @@
                             <a [routerLink]="['/topdestinations', region.id]">
                                 <img src="assets/img/icon/des-arrow.png" alt="icon">
                             </a>
-                            
-                            
+
+
 
                         </div>
                     </div>
@@ -319,7 +225,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let hotel of hotels">
                 <div class="common_card_five">
-                    <div class="common_card_five_img">
+                    <div class="common_card_five_img" (click)="navigateToHotelDetail(hotel.id)">
                         <a>
                             <img [src]="hotel.image" alt="Hotel Image">
                         </a>
@@ -331,6 +237,8 @@
                         </ul>
                         <h3><a href="tour-search.html">{{ hotel.name }}</a></h3>
                         <p><i class="fas fa-map-marker-alt"></i>{{ hotel.city }}</p>
+                        <!-- Add hotel starnumber -->
+                        <p>{{ hotel.starnumber }} Stars</p>
                         <div class="common_card_five_bottom">
                             <div class="common_card_five_bottom_left">
                                 <!-- Add dynamic data -->
@@ -343,6 +251,8 @@
                     </div>
                 </div>
             </div>
+            
+
 
 
 
